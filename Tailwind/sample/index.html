@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="bg-white py-4 shadow-md">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    <a href="#" class="text-lg font-bold">Ecommerce</a>
+    <ul class="flex items-center space-x-4">
+      <li><a href="#" class="text-gray-600 hover:text-gray-900">Home</a></li>
+      <li><a href="#" class="text-gray-600 hover:text-gray-900">Shop</a></li>
+      <li><a href="#" class="text-gray-600 hover:text-gray-900">About</a></li>
+      <li><a href="#" class="text-gray-600 hover:text-gray-900">Contact</a></li>
+    </ul>
+    <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
+      Cart
+    </button>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="bg-orange-100 py-12">
+  <div class="container mx-auto px-4 flex flex-col items-center">
+    <h1 class="text-4xl font-bold text-orange-500">Welcome to our Ecommerce Site</h1>
+    <p class="text-lg text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+    <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-4">
+      Shop Now
+    </button>
+  </div>
+</section>
+
+<!-- Product Section -->
+<section class="py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-gray-900">Our Products</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+      <div class="bg-white shadow-md rounded p-4">
+        <img src="https://via.placeholder.com/200" alt="Product Image" class="w-full h-48 object-cover">
+        <h3 class="text-lg font-bold text-gray-900 mt-2">Product 1</h3>
+        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button 
+          class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-2 add-to-cart"
+          data-product-name="Product 1"
+          data-product-price="10.00"> 
+          Add to Cart
+        </button>
+      </div>
+      <div class="bg-white shadow-md rounded p-4">
+        <img src="https://via.placeholder.com/200" alt="Product Image" class="w-full h-48 object-cover">
+        <h3 class="text-lg font-bold text-gray-900 mt-2">Product 2</h3>
+        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button 
+          class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-2 add-to-cart"
+          data-product-name="Product 2"
+          data-product-price="15.00"> 
+          Add to Cart
+        </button>
+      </div>
+      <div class="bg-white shadow-md rounded p-4">
+        <img src="https://via.placeholder.com/200" alt="Product Image" class="w-full h-48 object-cover">
+        <h3 class="text-lg font-bold text-gray-900 mt-2">Product 3</h3>
+        <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button 
+          class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-2 add-to-cart"
+          data-product-name="Product 3"
+          data-product-price="20.00"> 
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cart Section -->
+<section class="py-12">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-gray-900">Your Cart</h2>
+    <div class="bg-white shadow-md rounded p-4 mt-4">
+      <table class="w-full">
+        <thead>
+          <tr>
+            <th class="text-lg font-bold text-gray-900">Product</th>
+            <th class="text-lg font-bold text-gray-900">Quantity</th>
+            <th class="text-lg font-bold text-gray-900">Price</th>
+          </tr>
+        </thead>
+        <tbody id="cart-table">
+          <!-- Cart items will be rendered here -->
+        </tbody>
+      </table>
+      <button class="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded mt-4">
+        Checkout
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript Code -->
+<script>
+  // Get the cart table element
+  const cartTable = document.getElementById('cart-table');
+
+  // Function to render cart items
+  function renderCartItems() {
+    // Get the cart items from local storage
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Clear the cart table
+    cartTable.innerHTML = '';
+
+    // Render each cart item
+    cartItems.forEach((item) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${item.name}</td>
+        <td>${item.quantity}</td>
+        <td>$${(item.price * item.quantity).toFixed(2)}</td>
+      `;
+      cartTable.appendChild(row);
+    });
+  }
+
+  // Function to add item to cart
+  function addItemToCart(item) {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const existingItem = cartItems.find((i) => i.name === item.name);
+
+    if (existingItem) {
+      existingItem.quantity++;
+    } else {
+      cartItems.push(item);
+    }
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    renderCartItems();
+  }
+
+  // Add event listeners to the add to cart buttons
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+  addToCartButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const productName = button.dataset.productName;
+      const productPrice = parseFloat(button.dataset.productPrice);
+
+      const cartItem = {
+        name: productName,
+        quantity: 1,
+        price: productPrice,
+      };
+
+      addItemToCart(cartItem);
+    });
+  });
+
+  // Render the cart items on page load
+  renderCartItems();
+</script>
+</body>
+</html>
