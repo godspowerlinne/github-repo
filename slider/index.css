@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+.slider {
+	position: relative;
+	width: 100%;
+    height: 100vh;
+}
+
+.slide {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+.slide img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.captions {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #fff;
+    background: #0009;
+    padding: 10px 25px;
+    border-radius: 7px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: #000b;
+        color: #fff;
+        box-shadow: 0 0 10px #ffffff;
+    }
+}
+
+.slide h2 {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.slide p {
+    font-size: 1em;
+    width: 400px;
+}
+
+
+.slide button {
+    font-size: 1em;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    font-weight: 700;
+    width: max-content;
+    color: #fff;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: #000;
+    }
+}
+.prev, .next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+	cursor: pointer;
+	color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    transition: all 0.3s ease;
+    border-radius: 100%;
+    border: 1px solid #000;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        font-weight: 900;
+        color: #000;
+    }
+}
+
+.prev {
+	left: 5%;
+}
+
+.next {
+	right: 5%;
+}
+
+.active {
+	display: block;
+}
+
+@media (max-width: 568px) {
+    .prev, .next {
+        font-size: 12px;
+        width: 30px;
+        height: 30px;
+    }
+    .slide h2 {
+        font-size: 1.5em;
+    }
+    .slide p {
+        font-size: 0.8em;
+        width: 230px;
+    }
+}
