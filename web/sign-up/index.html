@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Un</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+    <!-- Container  -->
+    <div class="container">
+        <h1>Sign Up</h1>
+        <!-- Form Section  -->
+        <form>
+            <!-- Name inputs  -->
+            <div class="names">
+                <!-- First name  -->
+                <div class="input-bx">
+                    <label for="firstName" id="flabel">First Name</label>
+                    <input type="text" id="firstName" name="firstname" required>
+                </div>
+                <!-- Last name  -->
+                <div class="input-bx">
+                    <label for="lastName" id="llabel">Last Name</label>
+                    <input type="text" id="lastName" name="lastname" required>
+                </div>
+            </div>
+            <!-- Contact inputs  -->
+            <div class="contact">
+                <!-- Email  -->
+                <div class="input-bx">
+                    <label for="email" id="elabel">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <!-- Phone  -->
+                <div class="input-bx">
+                    <label for="phoneNumber" id="nlabel">Phone number</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" required>
+                </div>
+            </div>
+            <!-- Gender and DOB inputs -->
+            <div class="gender_DOB">
+                <!-- Gender inputs  -->
+                <div class="gender">
+                    <label for="gender" title="Select your gender">Gender</label>
+                    <!-- Male  -->
+                    <div class="input-bx">
+                        <input type="radio" id="male" name="gender" value="male">
+                        <label for="male">Male</label>
+                    </div>
+                    <!-- Female  -->
+                    <div class="input-bx">
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Female</label>
+                    </div>
+                    <!-- Others  -->
+                    <div class="input-bx">
+                        <input type="radio" id="others" name="gender" value="others">
+                        <label for="others">Others</label>
+                    </div>
+                </div>
+                <!-- DOB  -->
+                <div class="dob">
+                    <label for="dob">Date of Birth</label>
+                    <div class="input-bx">
+                        <input type="date" id="dob" name="dob" required>
+                    </div>
+                </div>
+            </div>
+            <!-- Password inputs  -->
+            <div class="password">
+                <!-- Password  -->
+                <div class="input-bx">
+                    <label for="password" id="plabel">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <!-- Confirm Password  -->
+                <div class="input-bx">
+                    <label for="confirmPassword" id="cplabel">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+            </div>
+            <!-- terms and conditions -->
+            <div class="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
+            <div class="validation">
+                <p id="errorMessage"></p>
+            </div>
+            <!-- Submit Button  -->
+            <div class="input-bx">
+                <input type="submit" value="Sign Up" id="submit">
+            </div>
+        </form>
+        <p class="account">Already have an account? <a href="../sign-in/index.html">Sign In</a></p>
+    </div>
+    <script src="./index.js"></script>
+</body>
+
+</html>
