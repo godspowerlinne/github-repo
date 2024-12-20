@@ -1,0 +1,19 @@
+Once the basic HTML structure of the tab bar navigation is in place, the next step is to add styling to the tab bar navigation using CSS.
+
+Next, we will create our CSS file. In this file, we will use some basic CSS rules to create tab bar navigation.
+
+The body style rule sets the width of the page to 100% and the height to 100vh (viewport height), which ensures that the page takes up the full screen. The display property is set to flex, which allows for easy alignment of child elements. justify-content and align-items properties are used to center content both horizontally and vertically. The padding and margin are set to 0, and a background gradient is added.
+
+The a style rule applies to all anchor tags and sets their text-decoration property to none, their font-family to sans-serif, their text-transform to lowercase, their font-size to 1.5em, and their color to a dark gray.
+
+
+The menu style rule applies to a container element that includes a list of links, styled as tabs. The display property is set to flex with justify-content and align-items to arrange the tabs horizontally and vertically. The position property is set to relative to position the tabs inside the container. The width and height properties determine the size of the menu, while the padding and border-radius properties set the space between the tabs and the rounded corners of the container. A white background color and a box shadow effect are added.
+
+The menu .nav-item style rule applies to the individual tabs within the menu container, and their position is set to relative. The .tab-title class of each tab is set to display:none, but when the .nav-item is hovered over, it appears with a black background and white text, and a small triangle pointing downward is created using the :before pseudo-element.
+
+The .checkbox class applies to a checkbox input element that toggles the menu on and off. The element is styled with a white background color and made clickable by setting its cursor property to pointer. The :before and :after pseudo-elements are used to create a plus sign that appears when the checkbox is unchecked and a cross sign when the checkbox is checked. The checkbox is initially hidden with width and height properties set to 0.
+
+
+When the checkbox is checked, the menu tabs slide down with the .nav-item style rule being modified with display:flex, align-items:center, and justify-content:center. Each tab is made circular, and its background color changes based on the tab's position. The text color changes to white and the tab title appears. The :after pseudo-element is rotated 45 degrees, and the checkbox's border and pseudo-elements are colored gray.
+
+This will give our tab bar navigation an upgraded presentation. Create a CSS file with the name of styles.css and paste the given codes into your CSS file. Remember that you must create a file with the .css extension.
