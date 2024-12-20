@@ -1,0 +1,19 @@
+The first part of the code sets some general styles for the page body, such as the font-family, font-weight, and background-color.
+
+The next section of the code defines the styles for the switch component. It sets the position of the switch to absolute, which means it is positioned relative to the nearest positioned ancestor element. The top and left properties are used to center the switch in the middle of the page. The width and height of the switch are set to 150px and 50px respectively. The background color of the switch is set to #4cd964, which is a shade of green.
+
+
+The switch span section of the code defines the styles for the switch slider. The slider is positioned in the middle of the switch using the top and left properties. The background color of the slider is white, and it is rotated -45 degrees using the transform property.
+
+The switch span:after section of the code defines the styles for the slider handle. The handle is a small rectangle that is positioned on top of the slider using the margin-top property.
+
+The input[type=radio] section of the code sets the display property of the radio input fields to none. This is done to hide the input fields, as they are not needed to display the switch.
+
+The switch label section of the code defines the styles for the switch labels. The labels are positioned to the left and right of the switch, and they change color when the corresponding radio input field is selected. The color change is done using the color property.
+
+
+The #no:checked ~ .switch section of the code defines the styles that are applied to the switch when the "no" radio input field is selected. The background color of the switch is changed to #ff3b30, which is a shade of red. The position of the slider is changed using the margin-left property, and the handle is rotated using the transform property.
+
+The #no:checked ~ .switch label[for=no] section of the code defines the styles for the "no" label when the "no" radio input field is selected. The color of the label is changed to white.
+
+The #yes:checked ~ .switch label[for=yes] section of the code defines the styles for the "yes" label when the "yes" radio input field is selected. The color of the label is changed to white.
