@@ -1,0 +1,14 @@
+Once the basic HTML structure of the toggle switch button is in place, the next step is to add styling to the toggle switch button using CSS.
+
+Next, we will create our CSS file. In this file, we will use some basic CSS rules to create our toggle switch button.
+
+The switch consists of a circular handle that slides back and forth on a linear track. When the switch is on, the handle is positioned on the right side of the track, and the background of the switch changes color. When the switch is off, the handle is positioned on the left side of the track.
+
+The first block of code sets default styles for all elements, including the box-sizing property, which sets the box model to use border-box sizing (meaning padding and border are included in the element's total width and height). The background of the body is set to a linear gradient, and the display property is set to flex. Custom properties are also defined for the colors of the switch.
+
+
+The second block of code styles the toggle switch itself. The class .toy-toggle is applied to the outer container of the switch, and several background gradients and box shadows are used to create the appearance of the switch. The class ".border1" and ".border2" are applied to elements that are used to create the border of the switch.
+
+The class ".border3" is applied to an element that is used to create the background of the switch. This class has a transition property that is used to animate the background color when the switch is turned on or off. The class ".handle" is applied to the circular handle that slides back and forth on the track. This element also has a transition property that is used to animate the movement of the handle when the switch is turned on or off.
+
+The last block of code applies styles to the toggle switch when it is turned on or off. The input element that controls the toggle switch is styled to be hidden off-screen. When the input is checked (meaning the switch is turned on), several classes are applied to elements within the switch to animate its appearance. The background color of the switch changes, the handle moves to the right, and the handle-on and handle-off classes are used to animate the opening and closing of the circular handle. When the input is unchecked (meaning the switch is turned off), these classes are removed, and the switch returns to its default appearance.
