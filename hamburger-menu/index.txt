@@ -1,0 +1,33 @@
+The first section sets the height of the HTML and body elements to 100%, which is often done to ensure that elements inside them that are set to height: 100% will take up the full height of the viewport.
+
+
+The second section styles the body element, setting a background image, font family, and text color.
+
+The third section styles a container element that will hold the file drop area. It sets the height to 100%, displays the element as a flex container with center-aligned items, and adds padding and margin of 0 to remove any default spacing.
+
+The fourth section styles the file drop area itself. It sets the width to a fixed size of 350 pixels, but also allows it to grow to the full width of its parent container. It adds padding and a box shadow for a three-dimensional look, and sets a transition effect for when the element is activated.
+
+The fifth section styles the fake upload button that will be displayed inside the drop area. It sets its background color, border radius, and padding, and aligns it to the left of the drop area. It also sets its font size and text to uppercase.
+
+
+The sixth section styles the file message that will be displayed inside the drop area. It sets the font size, weight, and color, and uses white-space: nowrap and text-overflow: ellipsis to ensure that the message is not too wide for the drop area.
+
+The seventh section styles the delete button that will be displayed next to each file that is uploaded. It sets its position to absolute and aligns it to the right of the file message. It sets its width and height to 18 pixels, and adds a background image that is a small SVG of a trash can. It also sets a transition effect for when the delete button is hovered over.
+
+This will give our drag and drop file upload feature an upgraded presentation. Create a CSS file with the name of styles.css and paste the given codes into your CSS file. Remember that you must create a file with the .css extension.
+
+
+Finally, we will add the drag and drop functionality to our container element. We will add the below code to our container element.
+
+Here's a breakdown of what the code does:
+
+The first three lines of the code define three variables, $fileInput, $droparea, and $delete, which store references to three different HTML elements on the page. These elements are selected using jQuery selectors.
+
+The next few lines of the code use the $fileInput variable to attach event listeners to the file input field. Specifically, the code listens for the 'dragenter', 'focus', and 'click' events, and when any of these events are triggered, the code adds a CSS class, 'is-active', to the $droparea element.
+
+
+The next set of event listeners listens for the 'dragleave', 'blur', and 'drop' events on the $fileInput element. When any of these events are triggered, the 'is-active' class is removed from the $droparea element.
+
+The next set of event listeners listens for the 'change' event on the $fileInput element. When a file is selected, the code checks how many files were selected, and updates the text content of the element immediately preceding the $fileInput element to reflect the number of files selected. If only one file was selected, the file name is displayed. If no files were selected, the default text is displayed. If multiple files were selected, the number of files is displayed.
+
+The last event listener listens for a 'click' event on the $delete element. When this event is triggered, the code clears the file input field, resets the text content of the element immediately preceding the $fileInput element to the default text, and hides the $delete element.
